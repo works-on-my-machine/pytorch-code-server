@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Python: Run Main",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "debug.console.fontSize": 12,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.fontSize": 12,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        {
+            "column": 80
+        }
+    ],
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 2,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontWeight": "500",
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "workbench.colorTheme": "GitHub Light",
+    "workbench.iconTheme": "vscode-icontheme-nomo-dark-macos",
+    "workbench.sideBar.location": "left"
+}
