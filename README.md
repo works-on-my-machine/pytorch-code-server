@@ -31,5 +31,5 @@ Login with your password. For a working example look at example project folder. 
 
 ## TODO
 - [ ] Better documentation
-- [ ] NO-VNC support for visualization
-- [ ] Docker compose support
+- [x] NO-VNC support for visualization
+- [x] Docker compose support

@@ -1,0 +1,37 @@
+version: '3'
+services:
+  pytorch-cs:
+    container_name: pytorch-cs
+    image: ghcr.io/works-on-my-machine/pytorch-code-server:1.3.0
+    environment:
+      - "DISPLAY=pytorch-novnc:0.0"
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu, utility]
+    networks:
+      - pytorch-cs
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+    volumes:
+      - "${CS_PROJECTS_VOLUME}:/projects"
+  pytorch-novnc:
+    container_name: opencv-novnc
+    image: "theasp/novnc:latest"
+    environment:
+      - "DISPLAY_WIDTH=${NOVNC_WIDTH}"
+      - "DISPLAY_HEIGHT=${NOVNC_HEIGHT}"
+      - RUN_XTERM=no
+      - RUN_FLUXBOX=yes
+    networks:
+      - pytorch-cs
+    restart: unless-stopped
+    ports:
+      - 9090:8080
+networks:
+  pytorch-cs:
+    driver: bridge
