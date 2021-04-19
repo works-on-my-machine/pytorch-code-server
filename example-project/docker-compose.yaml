@@ -1,4 +1,5 @@
-version: '3'
+version: '3.9'
+
 services:
   pytorch-cs:
     container_name: pytorch-cs
@@ -13,7 +14,7 @@ services:
             count: 1
             capabilities: [gpu, utility]
     networks:
-      - pytorch-cs
+      - pytorch-network
     ports:
       - 8443:8443
     restart: unless-stopped
@@ -29,10 +30,10 @@ services:
       - RUN_XTERM=no
       - RUN_FLUXBOX=yes
     networks:
-      - pytorch-cs
+      - pytorch-network
     restart: unless-stopped
     ports:
       - 6060:8080
+
 networks:
-  pytorch-cs:
-    driver: bridge
+  pytorch-network:
