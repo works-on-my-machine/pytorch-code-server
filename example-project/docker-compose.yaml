@@ -17,6 +17,7 @@ services:
     ports:
       - 8443:8443
     restart: unless-stopped
+    user: "${UID}:${GID}"
     volumes:
       - "${CS_PROJECTS_VOLUME}:/projects"
   pytorch-novnc:
