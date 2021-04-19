@@ -1,9 +1,9 @@
 # PyTorch Code Server with CUDA
 Code Server Docker image for PyTorch with python development on the browser. Contains:
-- CUDA 11.0
+- CUDA 11.1
 - Python 3.8.3
-- PyTorch 1.7.0
-- Code Server 3.8.0 (VSCode 1.51.1)
+- PyTorch 1.81.1
+- Code Server 3.9.3 (VSCode 1.54.2)
 
 ## Requirements
 - CUDA device with compute capability 3.5 or higher
@@ -17,10 +17,10 @@ $ docker run --privileged --rm -it --init \
   --ipc=host \
   --user="$(id -u):$(id -g)" \
   --volume="$PWD:/projects" \
-  -p 8081:8080 \
+  -p 8443:8443 \
   ghcr.io/works-on-my-machine/pytorch-code-server:latest
 ```
-After running above command open `localhost:8081` in your browser. Find your password under `~/.config/code-server/config.yaml`
+After running above command open `localhost:8443` in your browser. Find your password under `~/.config/code-server/config.yaml`
 ```bash
 $ docker exec -it <your_container_name> /bin/bash
 $ cat ~/.config/code-server/config.yaml
