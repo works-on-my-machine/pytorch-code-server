@@ -69,5 +69,5 @@ RUN curl -sLo ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-py38
 RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge \
   && conda clean -ya
 
-EXPOSE 8080
+EXPOSE 8443
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8443", "--cert", "--disable-telemetry", "."]
