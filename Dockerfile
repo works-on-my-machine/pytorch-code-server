@@ -70,4 +70,4 @@ RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c 
   && conda clean -ya
 
 EXPOSE 8080
-ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "--disable-telemetry", "."]
+ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8443", "--cert", "--disable-telemetry", "."]
