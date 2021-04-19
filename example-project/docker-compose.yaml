@@ -32,7 +32,7 @@ services:
       - pytorch-cs
     restart: unless-stopped
     ports:
-      - 9090:8080
+      - 6060:8080
 networks:
   pytorch-cs:
     driver: bridge
