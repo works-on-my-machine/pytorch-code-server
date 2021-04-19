@@ -18,7 +18,11 @@
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "afterDelay",
     "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--generated-members=numpy.* ,torch.*"
+    ],
     "python.linting.pylintEnabled": true,
+    "python.pythonPath": "/usr/bin/python3",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontSize": 12,
@@ -27,8 +31,5 @@
     "terminal.integrated.shell.linux": "/bin/bash",
     "workbench.colorTheme": "GitHub Light",
     "workbench.iconTheme": "vscode-icontheme-nomo-dark-macos",
-    "workbench.sideBar.location": "left",
-    "python.linting.pylintArgs": [
-        "--generated-members=numpy.* ,torch.*"
-    ]
+    "workbench.sideBar.location": "left"
 }

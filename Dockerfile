@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
   lsb-release \
   python \
   python3-pip \
+  python3-opencv \
   && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
