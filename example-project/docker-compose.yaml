@@ -2,7 +2,7 @@ version: '3'
 services:
   pytorch-cs:
     container_name: pytorch-cs
-    image: ghcr.io/works-on-my-machine/pytorch-code-server:1.5.0
+    image: ghcr.io/works-on-my-machine/pytorch-code-server:latest
     environment:
       - "DISPLAY=pytorch-novnc:0.0"
     deploy:
@@ -21,7 +21,7 @@ services:
     volumes:
       - "${CS_PROJECTS_VOLUME}:/projects"
   pytorch-novnc:
-    container_name: opencv-novnc
+    container_name: pytorch-novnc
     image: "theasp/novnc:latest"
     environment:
       - "DISPLAY_WIDTH=${NOVNC_WIDTH}"
