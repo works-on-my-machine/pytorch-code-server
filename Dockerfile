@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
   openssh-client \
   vim.tiny \
   lsb-release \
+  python \
+  python3-pip \
   && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
@@ -47,27 +49,11 @@ RUN curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVE
 RUN dpkg -i ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb && rm ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 
-
 # Switch to default user
 USER coder
 ENV USER=coder
 ENV HOME=/home/coder
 WORKDIR /projects
-
-
-# Install Miniconda and Python 3.8
-ENV CONDA_AUTO_UPDATE_CONDA=false
-ENV PATH=/home/coder/miniconda/bin:$PATH
-RUN curl -sLo ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-py38_4.8.3-Linux-x86_64.sh \
-  && chmod +x ~/miniconda.sh \
-  && ~/miniconda.sh -b -p ~/miniconda \
-  && rm ~/miniconda.sh \
-  && conda install -y python==3.8.3 \
-  && conda clean -ya
-
-# CUDA 11.0-specific steps
-RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge \
-  && conda clean -ya
 
 EXPOSE 8443
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8443", "--cert", "--disable-telemetry", "."]
