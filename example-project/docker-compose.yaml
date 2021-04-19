@@ -2,7 +2,7 @@ version: '3'
 services:
   pytorch-cs:
     container_name: pytorch-cs
-    image: ghcr.io/works-on-my-machine/pytorch-code-server:latest
+    image: ghcr.io/works-on-my-machine/pytorch-code-server:1.6.0
     environment:
       - "DISPLAY=pytorch-novnc:0.0"
     deploy:
