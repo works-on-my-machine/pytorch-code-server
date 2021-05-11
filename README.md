@@ -3,7 +3,7 @@ Code Server Docker image for PyTorch with python development on the browser. Con
 - CUDA 11.1
 - Python 3.8.3
 - PyTorch 1.81.1
-- Code Server 3.9.3 (VSCode 1.54.2)
+- Code Server 3.10.0 (VSCode 1.56.0)
 
 ## Requirements
 - CUDA device with compute capability 3.5 or higher
