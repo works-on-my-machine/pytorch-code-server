@@ -18,7 +18,7 @@ $ docker run --privileged --rm -it --init \
   --user="$(id -u):$(id -g)" \
   --volume="$PWD:/projects" \
   -p 8443:8443 \
-  ghcr.io/works-on-my-machine/pytorch-code-server:1.9.1
+  ghcr.io/works-on-my-machine/pytorch-code-server:1.10.0
 ```
 After running above command open `localhost:8443` in your browser. Find your password under `~/.config/code-server/config.yaml`
 ```bash
